@@ -17,16 +17,18 @@
       <!-- <button class="addCells" id="addRight">+2</button>
       <button class="addCells" id="addDown">+1</button> -->
     </main>
-    <form id="formMapData">
-      <fieldset>
+    <aside>
+      <form id="mapInterface">
+        <h2>Map Options</h2>
+        <button id="hideCoords">Hide Coordinates</button>
+      </form>
+      <form id="formMapData">
         <h2>Load / Save</h2>
-        <button>Import Map Data</button>
-        <button>Export Map Data</button>
-      </fieldset>
-    </form>
+        <button>Import Map</button>
+        <button>Export Map</button>
+      </form>
 
-    <form id="formEditCell">
-      <fieldset class="editCell">
+      <form id="formEditCell">
         <h2>Edit Map Cell</h2>
         <label for="cellID">Cell ID:</label>
         <input type="text" id="cellID" disabled />
@@ -52,8 +54,8 @@
         <textarea id="notes"></textarea>
 
         <button type="submit">Save</button>
-      </fieldset>
-    </form>
+      </form>
+    </aside>
     <script type="module" src="./map.js"></script>
   </body>
 </html>

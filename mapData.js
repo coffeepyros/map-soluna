@@ -27,7 +27,13 @@ export const mapData = [
         category: "forest",
         notes: "",
       },
-      { x: -3, y: -2, label: "Sova (Insel)", category: "steppe", notes: "" },
+      {
+        x: -3,
+        y: -2,
+        label: "<em>Sova</em>",
+        category: "steppe",
+        notes: "",
+      },
       { x: -3, y: -1, label: "", category: "", notes: "" },
       { x: -3, y: 0, label: "Arena", category: "steppe", notes: "" },
       { x: -3, y: 1, label: "", category: "", notes: "" },
@@ -44,7 +50,7 @@ export const mapData = [
       { x: -2, y: 0, label: "", category: "", notes: "" },
       { x: -2, y: 1, label: "", category: "hills", notes: "" },
       { x: -2, y: 2, label: "", category: "forest", notes: "" },
-      { x: -2, y: 3, label: "Pira", category: "mountains", notes: "" },
+      { x: -2, y: 3, label: "<em>Pira</em>", category: "mountains", notes: "" },
     ],
   },
   {

@@ -1,6 +1,10 @@
 import { mapData } from "./mapData.js";
+// for safety reasons: working with a copy
+// old data would be overwritten after validation with new data
 let newMapData = [...mapData];
 const map = document.getElementById("map");
+
+// RENDERING
 
 render();
 
@@ -31,6 +35,8 @@ function render() {
   }
 }
 
+// ADDING CELLS
+
 document.querySelector("button#addLeft").addEventListener("click", addColLeft);
 
 function addColLeft(e) {
@@ -59,4 +65,44 @@ function addColLeft(e) {
   }
   console.log(newMapData);
   render();
+}
+
+document.querySelector("button#addUp").addEventListener("click", addRowUp);
+
+function addRowUp() {
+  let firstRowID = newMapData[0].data[0].y;
+  let nrOfColumns = newMapData.length;
+  console.log(firstRowID, nrOfColumns);
+  for (let i = 0; i < nrOfColumns; i++) {
+    let newCellData = {
+      x: newMapData[i].data[0].x,
+      y: firstRowID - 1,
+      label: "",
+      category: "",
+      notes: "",
+    };
+    newMapData[i] = {
+      col_ID: newMapData[i].col_ID,
+      data: [newCellData, ...newMapData[i].data],
+    };
+  }
+  console.log(newMapData);
+  render();
+}
+
+// INTERFACE
+
+const hideCoordsButton = document.querySelector("button#hideCoords");
+hideCoordsButton.addEventListener("click", hideCoords);
+
+function hideCoords(e) {
+  e.preventDefault();
+  let coords = document.querySelectorAll(".coords");
+  for (let span of coords) {
+    span.classList.toggle("hidden");
+    if (hideCoordsButton.innerText === "Hide Coordinates")
+      hideCoordsButton.innerText = "Show Coordinates";
+    else if (hideCoordsButton.innerText === "Show Coordinates")
+      hideCoordsButton.innerText = "Hide Coordinates";
+  }
 }
