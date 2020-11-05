@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluna - Map</title>
+    <link rel="stylesheet" href="./map.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Map of Soluna</h1>
+    </header>
+    <main>
+      <!-- <button class="addCells" id="addUp">+</button>
+      <button class="addCells" id="addLeft">+</button> -->
+      <figure role="group" id="map"></figure>
+      <!-- <button class="addCells" id="addRight">+</button>
+      <button class="addCells" id="addDown">+</button> -->
+    </main>
+    <form>
+      <fieldset>
+        <h2>Load / Save</h2>
+        <button>Import Map Data</button>
+        <button>Export Map Data</button>
+      </fieldset>
+
+      <fieldset class="editCell">
+        <h2>Edit Map Cell</h2>
+        <label for="cellID">Cell ID:</label>
+        <input type="text" id="cellID" disabled />
+
+        <label for="label">Label:</label>
+        <input type="text" id="label" />
+
+        <label for="category">Category:</label>
+        <select id="category">
+          <option value="city">City</option>
+          <option value="forest">Forest</option>
+          <option value="grass">Grass</option>
+          <option value="hills">Hills</option>
+          <option value="mountains">Mountains</option>
+          <option value="steppe">Steppe</option>
+          <option value="swamp">Swamp</option>
+          <option value="undiscovered">Undiscovered</option>
+          <option value="water">Water</option>
+        </select>
+
+        <label for="notes">Notes:</label>
+        <textarea id="notes"></textarea>
+
+        <button type="submit">Save</button>
+      </fieldset>
+    </form>
+    <script src="./map.js"></script>
+  </body>
+</html>

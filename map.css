@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Proza+Libre:ital,wght@0,400;0,700;1,400&display=swap");
+:root {
+  /* --cell-width: 100px; */
+  /* --cell-height: 116px; */
+  --cell-width: calc(100vh / 7.5);
+  --cell-height: calc(var(--cell-width) / 1.1547);
+}
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: "Proza Libre", sans-serif;
+}
+body {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 3rem;
+  row-gap: 1rem;
+}
+header {
+  grid-column: 1/3;
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  border-right: 1px dotted #000;
+  padding-right: 2rem;
+}
+.addCells {
+  margin: 1rem;
+}
+#addUp,
+#addDown {
+  grid-column: 1/4;
+  justify-self: center;
+}
+#addLeft,
+#addRight {
+  align-self: center;
+}
+h1,
+h2 {
+  font-family: "Marcellus SC", serif;
+}
+h2 {
+  margin-bottom: 1rem;
+}
+#map {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.column {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.hex {
+  text-align: center;
+  /* clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); */
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  /* background-image: url("./hexagon.svg"); */
+  background-color: #f0f0f0;
+  background-size: cover;
+  width: var(--cell-width);
+  height: var(--cell-height);
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+.column:nth-of-type(even) {
+  margin-top: calc(var(--cell-height) / 2);
+}
+
+.column + .column {
+  margin-left: calc(-1 * var(--cell-height) * 0.28);
+  /* 27px for no space between */
+}
+.column .hex:not(:first-of-type) {
+  margin-top: 1px;
+}
+form {
+  margin-top: 1rem;
+}
+fieldset.editCell {
+  display: grid;
+  grid-template-columns: 100px 320px;
+  gap: 0.5rem;
+  justify-items: start;
+}
+.editCell h2 {
+  grid-column: 1 / 3;
+}
+fieldset + fieldset {
+  margin-top: 2rem;
+}
+label {
+  padding: 0.33rem 0.67rem;
+}
+input,
+select,
+textarea {
+  border: 1px solid #ccc;
+  padding: 0.33rem 0.67rem;
+  font-size: 16px;
+}
+button {
+  font-size: 15px;
+  padding: 0.67rem 1.33rem;
+  cursor: pointer;
+  background-color: #a1887f;
+  box-shadow: 4px 4px #ccc;
+}
+button:hover {
+  background-color: #bcaaa4;
+  box-shadow: 4px 4px #ddd;
+}
+button + button {
+  margin-left: 0.67rem;
+}
+figure.edit {
+  background-color: #222;
+  color: #fff;
+}
+.add {
+  background-color: #f9f9f9;
+  font-size: 1.5rem;
+}
+
+/* COLORS */
+
+.city {
+  background-color: #e8e3c8;
+}
+.forest {
+  background-color: #607849;
+  color: rgba(255, 255, 255, 0.85);
+}
+.grass {
+  background-color: #b0bba1;
+}
+.hills {
+  background-color: #ab9988;
+}
+.mountains {
+  background-color: #7a614a;
+  color: rgba(255, 255, 255, 0.85);
+}
+.steppe {
+  background-color: #ccbfb2;
+}
+.swamp {
+  background-color: #8d9e7c;
+}
+.water {
+  background-color: #5e7784;
+}
+.capitol {
+  background-color: #b75534;
+}
+
+/* DEVELOPMENT */
+.coords {
+  position: absolute;
+  top: 8px;
+  color: rgba(0, 0, 0, 0.33);
+}
