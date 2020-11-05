@@ -23,7 +23,7 @@ export const mapData = [
       {
         x: -3,
         y: -3,
-        label: "Steinwald (Geister), Riss",
+        label: "Steinwald (Geister),<br/>Riss",
         category: "forest",
         notes: "",
       },
@@ -61,7 +61,13 @@ export const mapData = [
         category: "grass",
         notes: "",
       },
-      { x: -1, y: 2, label: "Phandalin", category: "forest", notes: "" },
+      {
+        x: -1,
+        y: 2,
+        label: "<em>Phandalin</em>",
+        category: "forest",
+        notes: "",
+      },
       { x: -1, y: 3, label: "", category: "", notes: "" },
     ],
   },
@@ -74,7 +80,7 @@ export const mapData = [
       {
         x: 0,
         y: 0,
-        label: "Mythea, Weizenfelder",
+        label: "<em>Mythea</em>",
         category: "city",
         notes: "",
       },
@@ -146,7 +152,13 @@ export const mapData = [
   {
     col_ID: 5,
     data: [
-      { x: 5, y: -3, label: "Argos", category: "capitol", notes: "" },
+      {
+        x: 5,
+        y: -3,
+        label: "<em>Argos</em>",
+        category: "capitol",
+        notes: "",
+      },
       { x: 5, y: -2, label: "", category: "", notes: "" },
       { x: 5, y: -1, label: "", category: "", notes: "" },
       { x: 5, y: 0, label: "", category: "", notes: "" },

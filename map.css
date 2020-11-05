@@ -72,16 +72,16 @@ h2 {
   flex-direction: column;
 }
 .hex {
+  font-size: 15px;
   text-align: center;
-  /* clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); */
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  /* background-image: url("./hexagon.svg"); */
   background-color: #f0f0f0;
   background-size: cover;
   width: var(--cell-width);
   height: var(--cell-height);
   box-sizing: content-box;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -182,6 +182,15 @@ figure.edit {
 }
 .capitol {
   background-color: #b75534;
+}
+.hex em {
+  font-style: normal;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-family: "Marcellus SC", serif;
+}
+.capitol em {
+  border-bottom: 2px solid #222;
 }
 
 /* DEVELOPMENT */
