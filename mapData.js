@@ -32,7 +32,7 @@ export const mapData = [
       { x: -3, y: 0, label: "Arena", category: "steppe", notes: "" },
       { x: -3, y: 1, label: "", category: "", notes: "" },
       { x: -3, y: 2, label: "", category: "", notes: "" },
-      { x: -3, y: 3, label: "", category: "", notes: "" },
+      { x: -3, y: 3, label: "Tränensee", category: "water", notes: "" },
     ],
   },
   {
@@ -43,8 +43,8 @@ export const mapData = [
       { x: -2, y: -1, label: "", category: "", notes: "" },
       { x: -2, y: 0, label: "", category: "", notes: "" },
       { x: -2, y: 1, label: "", category: "hills", notes: "" },
-      { x: -2, y: 2, label: "Pira", category: "mountains", notes: "" },
-      { x: -2, y: 3, label: "", category: "", notes: "" },
+      { x: -2, y: 2, label: "", category: "forest", notes: "" },
+      { x: -2, y: 3, label: "Pira", category: "mountains", notes: "" },
     ],
   },
   {
@@ -141,6 +141,30 @@ export const mapData = [
       { x: 4, y: 1, label: "", category: "", notes: "" },
       { x: 4, y: 2, label: "", category: "", notes: "" },
       { x: 4, y: 3, label: "", category: "", notes: "" },
+    ],
+  },
+  {
+    col_ID: 5,
+    data: [
+      { x: 5, y: -3, label: "Argos", category: "capitol", notes: "" },
+      { x: 5, y: -2, label: "", category: "", notes: "" },
+      { x: 5, y: -1, label: "", category: "", notes: "" },
+      { x: 5, y: 0, label: "", category: "", notes: "" },
+      { x: 5, y: 1, label: "", category: "", notes: "" },
+      { x: 5, y: 2, label: "", category: "", notes: "" },
+      { x: 5, y: 3, label: "", category: "", notes: "" },
+    ],
+  },
+  {
+    col_ID: 6,
+    data: [
+      { x: 6, y: -3, label: "", category: "", notes: "" },
+      { x: 6, y: -2, label: "", category: "", notes: "" },
+      { x: 6, y: -1, label: "", category: "", notes: "" },
+      { x: 6, y: 0, label: "", category: "", notes: "" },
+      { x: 6, y: 1, label: "", category: "", notes: "" },
+      { x: 6, y: 2, label: "", category: "", notes: "" },
+      { x: 6, y: 3, label: "", category: "", notes: "" },
     ],
   },
 ];
