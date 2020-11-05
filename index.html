@@ -11,19 +11,21 @@
       <h1>Map of Soluna</h1>
     </header>
     <main>
-      <!-- <button class="addCells" id="addUp">+</button>
-      <button class="addCells" id="addLeft">+</button> -->
+      <button class="addCells" id="addUp">+1</button>
+      <button class="addCells" id="addLeft">+2</button>
       <figure role="group" id="map"></figure>
-      <!-- <button class="addCells" id="addRight">+</button>
-      <button class="addCells" id="addDown">+</button> -->
+      <!-- <button class="addCells" id="addRight">+2</button>
+      <button class="addCells" id="addDown">+1</button> -->
     </main>
-    <form>
+    <form id="formMapData">
       <fieldset>
         <h2>Load / Save</h2>
         <button>Import Map Data</button>
         <button>Export Map Data</button>
       </fieldset>
+    </form>
 
+    <form id="formEditCell">
       <fieldset class="editCell">
         <h2>Edit Map Cell</h2>
         <label for="cellID">Cell ID:</label>
@@ -51,6 +53,6 @@
         <button type="submit">Save</button>
       </fieldset>
     </form>
-    <script src="./map.js"></script>
+    <script type="module" src="./map.js"></script>
   </body>
 </html>
