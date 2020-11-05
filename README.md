@@ -1,8 +1,12 @@
 ﻿# map-soluna
 
-Hex based map tool for my Dungeons & Dragon campaign setting "Soluna".
+Hex based map tool for my Dungeons & Dragons campaign setting "Soluna". In the end my players should be able to:
 
-https://coffeepyros.github.io/map-soluna/
+- adding/changing labels itself
+- changing terrain (from unknown to whatever the terrain is)
+- adding notes (npcs, locations, etc.)
+
+working prototype: https://coffeepyros.github.io/map-soluna/
 
 ## todo
 
