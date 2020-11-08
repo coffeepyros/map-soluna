@@ -2,8 +2,10 @@
 :root {
   /* --cell-width: 116px;
   --cell-height: 100px; */
-  --cell-height: calc((100vh - 6rem) / 8.5 - 2px);
+  --cell-height: calc((100vh - 6rem) / 8.5);
   --cell-width: calc(var(--cell-height) * 1.1547);
+  --cell-gap-x: 4px;
+  --cell-gap-y: 3px;
 }
 * {
   border: 0;
@@ -25,7 +27,7 @@ header {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  z-index: 10;
+  z-index: 5;
 }
 main {
   grid-area: map;
@@ -41,13 +43,13 @@ aside {
 .addCells {
   margin: 1rem;
 }
-#addUp,
-#addDown {
+#addRowUp,
+#addRowDown {
   grid-column: 1/4;
   justify-self: center;
 }
-#addLeft,
-#addRight {
+#addColLeft,
+#addColRight {
   align-self: center;
 }
 h1,
@@ -60,7 +62,7 @@ h2 {
 #map {
   display: flex;
   flex-wrap: nowrap;
-  overflow: auto;
+  /* overflow: auto; */
 }
 .column {
   display: flex;
@@ -75,7 +77,7 @@ h2 {
   background-size: cover;
   width: var(--cell-width);
   height: var(--cell-height);
-  box-sizing: content-box;
+  /* box-sizing: border-box; */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -84,15 +86,15 @@ h2 {
   cursor: pointer;
 }
 .column:nth-of-type(even) {
-  margin-top: calc(var(--cell-height) / 2);
+  margin-top: calc((var(--cell-height) + var(--cell-gap-y)) / 2);
 }
 
 .column + .column {
-  margin-left: calc(-1 * var(--cell-height) * 0.275);
-  /* 27px for no space between */
+  margin-left: calc(-1 * var(--cell-width) * 0.267 + var(--cell-gap-x));
+  /* *0.27 for no space between */
 }
 .column .hex:not(:first-of-type) {
-  margin-top: 1px;
+  margin-top: var(--cell-gap-y);
 }
 form {
   margin-top: 1rem;
@@ -140,7 +142,7 @@ button + button {
   margin-left: 0.67rem;
 }
 figure.edit {
-  background-color: #222;
+  background-color: #444;
   color: #fff;
 }
 .add {
@@ -196,5 +198,25 @@ figure.edit {
   color: rgba(0, 0, 0, 0.33);
 }
 .hidden {
-  display: none;
+  display: none !important;
+}
+#overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#overlay a {
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+}
+#overlay textarea {
+  width: 61.8%;
+  height: 61.8%;
 }

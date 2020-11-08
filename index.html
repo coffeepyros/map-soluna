@@ -7,15 +7,19 @@
     <link rel="stylesheet" href="./map.css" />
   </head>
   <body>
+    <div id="overlay" class="hidden">
+      <a href="#">[ Close ]</a>
+      <textarea></textarea>
+    </div>
     <header>
       <h1>Map of Soluna</h1>
     </header>
     <main>
-      <button class="addCells" id="addUp">+1</button>
-      <button class="addCells" id="addLeft">+2</button>
+      <button class="addCells" id="addRowUp">+1</button>
+      <button class="addCells" id="addColLeft">+2</button>
       <figure role="group" id="map"></figure>
-      <!-- <button class="addCells" id="addRight">+2</button>
-      <button class="addCells" id="addDown">+1</button> -->
+      <button class="addCells" id="addColRight">+2</button>
+      <button class="addCells" id="addRowDown">+1</button>
     </main>
     <aside>
       <form id="mapInterface">
@@ -24,8 +28,8 @@
       </form>
       <form id="formMapData">
         <h2>Load / Save</h2>
-        <button>Import Map</button>
-        <button>Export Map</button>
+        <button id="btnImport">Import Map</button>
+        <button id="btnExport">Export Map</button>
       </form>
 
       <form id="formEditCell">
@@ -36,8 +40,8 @@
         <label for="label">Label:</label>
         <input type="text" id="label" />
 
-        <label for="category">Category:</label>
-        <select id="category">
+        <label for="terrain">Category:</label>
+        <select id="terrain">
           <option value="city">City</option>
           <option value="forest">Forest</option>
           <option value="grass">Grass</option>
