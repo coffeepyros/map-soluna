@@ -174,7 +174,8 @@ const overlayOutput = document.querySelector("#overlay textarea");
 
 // EXPORT MAP
 
-document.getElementById("btnExport").addEventListener("click", () => {
+document.getElementById("btnExport").addEventListener("click", (e) => {
+  e.preventDefault();
   overlayOutput.value =
     "export const mapData = " + JSON.stringify(newMapData) + ";";
   const overlayImportBtn = document.getElementById("overlayImportBtn");
@@ -184,7 +185,9 @@ document.getElementById("btnExport").addEventListener("click", () => {
 
 // IMPORT MAP
 
-document.getElementById("btnImport").addEventListener("click", () => {
+document.getElementById("btnImport").addEventListener("click", (e) => {
+  e.preventDefault();
+
   overlayOutput.value = "";
   overlay.classList.toggle("hidden");
   const overlayImportBtn = document.getElementById("overlayImportBtn");
