@@ -3,7 +3,8 @@
   /* --cell-width: 116px;
   --cell-height: 100px; */
   --cell-height: calc((100vh - 6rem) / 8.5);
-  --cell-width: calc(var(--cell-height) * 1.1547);
+  /* 8.5 may need to be changed dynamically, based on map size */
+  --cell-width: calc(var(--cell-height) * 1.1547); /* hex aspect ratio */
   --cell-gap-x: 4px;
   --cell-gap-y: 3px;
 }
@@ -17,7 +18,6 @@
 body {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr;
   grid-template-areas: "map interface";
   column-gap: 3rem;
   row-gap: 1rem;
@@ -70,20 +70,18 @@ h2 {
   flex-direction: column;
 }
 .hex {
-  font-size: 15px;
-  text-align: center;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  background-color: #f0f0f0;
-  background-size: cover;
   width: var(--cell-width);
   height: var(--cell-height);
-  /* box-sizing: border-box; */
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: #f0f0f0;
+  font-size: 15px;
+  text-align: center;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  position: relative;
   cursor: pointer;
+  position: relative;
 }
 .column:nth-of-type(even) {
   margin-top: calc((var(--cell-height) + var(--cell-gap-y)) / 2);
@@ -191,12 +189,13 @@ figure.edit {
   border-bottom: 2px solid #222;
 }
 
-/* DEVELOPMENT */
 .coords {
   position: absolute;
   top: 8px;
   color: rgba(0, 0, 0, 0.33);
 }
+
+/* ---------- OVERLAY ---------- */
 .hidden {
   display: none !important;
 }
