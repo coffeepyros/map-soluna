@@ -10,12 +10,14 @@ working prototype: https://coffeepyros.github.io/map-soluna/
 
 ## todo
 
-- adding columns to the right
-- adding row (top and bottom)
+- editing the cells itself
+- if the map gets too big, the interface should still be visible and not being scrolled out
+- research zooming part of your website
 - permanently writing new map data to file / cloud (haven't learned this yet)
 
 ## working
 
 - rendering js object data as hex map
 - reading cells
-- adding columns to the left
+- adding rows and columns
+- exporting/importing as JSON
