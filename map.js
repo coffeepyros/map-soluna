@@ -1,7 +1,7 @@
-import { mapData } from "./mapData.js";
+import { mapData as oldData } from "./mapData.js";
 // for safety reasons: working with a copy
 // old data would be (permanently) overwritten only after validation
-let newMapData = [...mapData];
+let mapData = [...oldData];
 const map = document.getElementById("map");
 
 // RENDERING
@@ -10,7 +10,7 @@ render();
 
 function render() {
   map.innerHTML = "";
-  for (let column of newMapData) {
+  for (let column of mapData) {
     let section = document.createElement("section");
     section.className = "column";
     for (let cellData of column.data) {
@@ -29,8 +29,13 @@ function render() {
         document.getElementById("cellID").value = cellData.x + "," + cellData.y;
         if (cellData.label)
           document.getElementById("label").value = cellData.label;
+        else document.getElementById("label").value = "";
         if (cellData.terrain)
           document.getElementById("terrain").value = cellData.terrain;
+        else document.getElementById("terrain").value = "";
+        if (cellData.notes)
+          document.getElementById("notes").value = cellData.notes;
+        else document.getElementById("notes").value = "";
       });
       section.append(cell);
     }
@@ -47,25 +52,25 @@ document
   .addEventListener("click", addColLeft);
 
 function addColLeft() {
-  let firstColID = newMapData[0].col_ID;
+  let firstColID = mapData[0].col_ID;
   // adding two columns so the hex-field structure isn't destroyed
   for (let i = 1; i < 3; i++) {
     let newCellData = [];
-    for (let j = 0; j < newMapData[0].data.length; j++) {
+    for (let j = 0; j < mapData[0].data.length; j++) {
       newCellData.push({
         x: firstColID - i,
-        y: newMapData[0].data[j].y,
+        y: mapData[0].data[j].y,
         label: "",
         terrain: "",
         notes: "",
       });
     }
-    newMapData = [
+    mapData = [
       {
         col_ID: firstColID - i,
         data: newCellData,
       },
-      ...newMapData,
+      ...mapData,
     ];
   }
   render();
@@ -78,21 +83,21 @@ document
   .addEventListener("click", addColRight);
 
 function addColRight() {
-  let lastColID = newMapData[newMapData.length - 1].col_ID;
+  let lastColID = mapData[mapData.length - 1].col_ID;
   // adding two columns so the hex-field structure isn't destroyed
   for (let i = 1; i < 3; i++) {
     let newCellData = [];
-    for (let j = 0; j < newMapData[0].data.length; j++) {
+    for (let j = 0; j < mapData[0].data.length; j++) {
       newCellData.push({
         x: lastColID + i,
-        y: newMapData[0].data[j].y,
+        y: mapData[0].data[j].y,
         label: "",
         terrain: "",
         notes: "",
       });
     }
-    newMapData = [
-      ...newMapData,
+    mapData = [
+      ...mapData,
       {
         col_ID: lastColID + i,
         data: newCellData,
@@ -107,19 +112,19 @@ function addColRight() {
 document.querySelector("button#addRowUp").addEventListener("click", addRowUp);
 
 function addRowUp() {
-  let firstRowCell = newMapData[0].data[0];
-  let nrOfColumns = newMapData.length;
+  let firstRowCell = mapData[0].data[0];
+  let nrOfColumns = mapData.length;
   for (let i = 0; i < nrOfColumns; i++) {
     let newCellData = {
-      x: newMapData[i].data[0].x,
+      x: mapData[i].data[0].x,
       y: firstRowCell.y - 1,
       label: "",
       terrain: "",
       notes: "",
     };
-    newMapData[i] = {
-      col_ID: newMapData[i].col_ID,
-      data: [newCellData, ...newMapData[i].data],
+    mapData[i] = {
+      col_ID: mapData[i].col_ID,
+      data: [newCellData, ...mapData[i].data],
     };
   }
   render();
@@ -132,25 +137,27 @@ document
   .addEventListener("click", addRowDown);
 
 function addRowDown() {
-  let lastRowCell = newMapData[0].data[newMapData[0].data.length - 1];
-  let nrOfColumns = newMapData.length;
+  let lastRowCell = mapData[0].data[mapData[0].data.length - 1];
+  let nrOfColumns = mapData.length;
   for (let i = 0; i < nrOfColumns; i++) {
     let newCellData = {
-      x: newMapData[i].data[0].x,
+      x: mapData[i].data[0].x,
       y: lastRowCell.y + 1,
       label: "",
       terrain: "",
       notes: "",
     };
-    newMapData[i] = {
-      col_ID: newMapData[i].col_ID,
-      data: [...newMapData[i].data, newCellData],
+    mapData[i] = {
+      col_ID: mapData[i].col_ID,
+      data: [...mapData[i].data, newCellData],
     };
   }
   render();
 }
 
-// INTERFACE
+// ---------- INTERFACE ----------
+
+// SHOW/HIDE COORDINATES
 
 const hideCoordsButton = document.querySelector("button#hideCoords");
 hideCoordsButton.addEventListener("click", hideCoords);
@@ -177,7 +184,7 @@ const overlayOutput = document.querySelector("#overlay textarea");
 document.getElementById("btnExport").addEventListener("click", (e) => {
   e.preventDefault();
   overlayOutput.value =
-    "export const mapData = " + JSON.stringify(newMapData) + ";";
+    "export const mapData = " + JSON.stringify(mapData) + ";";
   const overlayImportBtn = document.getElementById("overlayImportBtn");
   if (overlayImportBtn) overlayImportBtn.classList.add("hidden");
   overlay.classList.toggle("hidden");
@@ -204,7 +211,7 @@ document.getElementById("btnImport").addEventListener("click", (e) => {
       if (importString[importString.length - 1] === ";")
         importString = importString.substr(0, importString.length - 1);
       overlayOutput.value = importString;
-      newMapData = JSON.parse(importString);
+      mapData = JSON.parse(importString);
       render();
       overlay.classList.toggle("hidden");
     });
@@ -216,4 +223,32 @@ document.getElementById("btnImport").addEventListener("click", (e) => {
 
 document.querySelector("#overlay a").addEventListener("click", (e) => {
   overlay.classList.toggle("hidden");
+});
+
+// SAVE CELL DATA
+
+const formEditCell = document.getElementById("formEditCell");
+formEditCell.addEventListener("submit", (e) => {
+  let formData = new FormData(formEditCell);
+  let newCellData = {
+    x: parseInt(formData.get("cellID").split(",")[0]),
+    y: parseInt(formData.get("cellID").split(",")[1]),
+    label: formData.get("label"),
+    terrain: formData.get("terrain"),
+    notes: formData.get("notes"),
+  };
+  let replaceColIndex;
+  for (let i = 0; i < mapData.length; i++) {
+    if (mapData[i].col_ID === newCellData.x) replaceColIndex = i;
+  }
+  let replaceCellIndex;
+  for (let j = 0; j < mapData[replaceColIndex].data.length; j++) {
+    if (mapData[replaceColIndex].data[j].y === newCellData.y)
+      replaceCellIndex = j;
+  }
+  console.log(replaceColIndex);
+  console.log(replaceCellIndex);
+  mapData[replaceColIndex].data[replaceCellIndex] = newCellData;
+  render();
+  e.preventDefault();
 });

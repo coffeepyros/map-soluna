@@ -9,16 +9,9 @@ export const mapData = [
         y: -1,
         label: "Zentauren-<br/>Paar",
         terrain: "steppe",
-        notes:
-          "Alter Zentauren-Lehrer und junge Zentauren-Schülerin (hat für ihren Meister übersetzt). Lehrer meinte die Jungendlichen aus Mythea hätte hier im Zentaurengebiet nichts verloren.",
+        notes: "",
       },
-      {
-        x: -4,
-        y: 0,
-        label: "Wasserfall",
-        terrain: "steppe",
-        notes: "Löcher im Boden -> Grabewürmer",
-      },
+      { x: -4, y: 0, label: "Wasserfall", terrain: "steppe", notes: "" },
       { x: -4, y: 1, label: "", terrain: "", notes: "" },
       { x: -4, y: 2, label: "", terrain: "", notes: "" },
       { x: -4, y: 3, label: "", terrain: "", notes: "" },
@@ -39,26 +32,13 @@ export const mapData = [
         y: -2,
         label: "<em>Sova</em>",
         terrain: "steppe",
-        notes:
-          "Insel im See. Elementarrätsel. Ufer eher steinig/Bruchschiefer. Ereshki von Sova --Halbelfische Druidin + neugieriger, sich merkwürdig verhaltender, Tiger. Thereos hat hier seinen Fokus gebaut.",
+        notes: "",
       },
       { x: -3, y: -1, label: "", terrain: "", notes: "" },
       { x: -3, y: 0, label: "Arena", terrain: "steppe", notes: "" },
       { x: -3, y: 1, label: "", terrain: "", notes: "" },
-      {
-        x: -3,
-        y: 2,
-        label: "Path (Flooded)",
-        terrain: "",
-        notes: "Path,\nAncient, Barren, Flooded\nCorrupted by Dark Magic",
-      },
-      {
-        x: -3,
-        y: 3,
-        label: "Tränensee",
-        terrain: "water",
-        notes: "Salzwasser, kein erkennbarer Zufluss",
-      },
+      { x: -3, y: 2, label: "", terrain: "", notes: "" },
+      { x: -3, y: 3, label: "Tränensee", terrain: "water", notes: "" },
     ],
   },
   {
@@ -70,13 +50,7 @@ export const mapData = [
       { x: -2, y: 0, label: "", terrain: "", notes: "" },
       { x: -2, y: 1, label: "", terrain: "hills", notes: "" },
       { x: -2, y: 2, label: "", terrain: "forest", notes: "" },
-      {
-        x: -2,
-        y: 3,
-        label: "<em>Pira</em>",
-        terrain: "mountains",
-        notes: "Siedlung im Gebirge, hauptsächlich mit Erzabbau beschäftigt.",
-      },
+      { x: -2, y: 3, label: "<em>Pira</em>", terrain: "mountains", notes: "" },
     ],
   },
   {
@@ -114,8 +88,7 @@ export const mapData = [
         y: 0,
         label: "<em>Mythea</em>",
         terrain: "city",
-        notes:
-          "Siedlung am ehemaligen Waldrand, hauptsächlich mit Holzfällen beschäftigt. \nIn den letzten Jahrzehnten wurde die Waldgrenze immer weiter nach Süden zurück gedrängt. Weizenfelder.",
+        notes: "",
       },
       { x: 0, y: 1, label: "Köhler, Sägemühle", terrain: "grass", notes: "" },
       { x: 0, y: 2, label: "Frostwald", terrain: "forest", notes: "" },
@@ -127,14 +100,7 @@ export const mapData = [
     data: [
       { x: 1, y: -3, label: "", terrain: "", notes: "" },
       { x: 1, y: -2, label: "", terrain: "", notes: "" },
-      {
-        x: 1,
-        y: -1,
-        label: "The Wall",
-        terrain: "city",
-        notes:
-          "* Ruined (die alte Siedlung, verbrannt) - markiert die Südgrenze des Zentaurengebiets\n* Dense\n* Inaccessible\n\n- alter Palisadenzaun (vom Erstaußenposten)",
-      },
+      { x: 1, y: -1, label: "", terrain: "" },
       {
         x: 1,
         y: 0,
@@ -197,8 +163,7 @@ export const mapData = [
         y: -3,
         label: "<em>Argos</em>",
         terrain: "capitol",
-        notes:
-          "Hauptstadt des lokalen Gebiets. Tempel von Sol: Ausbildung von Paladinen (Sarthak, Helias). Tempel von Luna: steht im Kontakt mit ? (Calliopés Mutter), haben Observatorin Kira geschickt. Manusthenes Mutter Doria kommt von hier aus einer wohlhabenden Händlerfamilie.",
+        notes: "",
       },
       { x: 5, y: -2, label: "", terrain: "", notes: "" },
       { x: 5, y: -1, label: "", terrain: "", notes: "" },
