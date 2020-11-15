@@ -223,7 +223,7 @@ figure.edit {
 #notesOverlay {
   position: absolute;
   display: none;
-  width: 20vw;
+  width: 40ch;
   background-color: rgba(0, 0, 0, 0.67);
   z-index: 15;
   padding: 1rem;
