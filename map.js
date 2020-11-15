@@ -297,8 +297,13 @@ document.addEventListener("mousemove", (e) => {
   }
   if (x && y) {
     let coords = getColAndCellIndexForXY(x, y);
-    if (mapData[coords.col].data[coords.cell].notes)
+    if (mapData[coords.col].data[coords.cell].notes) {
+      let title = document.createElement("h3");
+      title.innerHTML = mapData[coords.col].data[coords.cell].label
+        .replace("<br/>", "")
+        .replace("<br>", "");
       notesOverlay.innerText = mapData[coords.col].data[coords.cell].notes;
-    else notesOverlay.style.display = "none";
+      notesOverlay.prepend(title);
+    } else notesOverlay.style.display = "none";
   }
 });

@@ -7,7 +7,7 @@ export const mapData = [
       {
         x: -4,
         y: -1,
-        label: "Zentauren-<br/>Paar",
+        label: "Zentauren-<br>Paar",
         terrain: "steppe",
         notes:
           "Alter Zentauren-Lehrer und junge Zentauren-Schülerin (hat für ihren Meister übersetzt). Lehrer meinte die Jugendlichen aus Mythea hätte hier im Zentaurengebiet nichts verloren.",
@@ -140,12 +140,13 @@ export const mapData = [
         y: 0,
         label: "Obst- und Olivenhaine",
         terrain: "grass",
-        notes: "",
+        notes:
+          "Altes Ehepaar, das die Olivenhaine bewirtschaftet. Hatten nach Hilfe bei der Olivenernte gefragt.",
       },
       {
         x: 1,
         y: 1,
-        label: "Holzfäller-<br/>Lager, Riss",
+        label: "Holzfäller-Lager, Riss",
         terrain: "forest",
         notes: "",
       },

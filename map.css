@@ -224,11 +224,23 @@ figure.edit {
   position: absolute;
   display: none;
   width: 40ch;
-  background-color: rgba(0, 0, 0, 0.67);
+  background-color: rgba(0, 0, 0, 0.75);
   z-index: 15;
-  padding: 1rem;
+  padding: 1.67rem;
   color: #f8f8f8;
   text-shadow: 1px 1px 0 #000;
   border-radius: 0.5rem;
   box-shadow: 0 0 0.5rem #333;
+  line-height: 1.4;
+}
+
+#notesOverlay h3,
+#notesOverlay em {
+  font-family: "Marcellus SC", serif;
+  letter-spacing: 2px;
+  margin: -0.25em 0 0.5em 0;
+  font-size: 1.33rem;
+}
+#notesOverlay em {
+  font-style: normal;
 }
