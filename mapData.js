@@ -10,7 +10,7 @@ export const mapData = [
         label: "Zentauren-<br/>Paar",
         terrain: "steppe",
         notes:
-          "Alter Zentauren-Lehrer und junge Zentauren-Schülerin (hat für ihren Meister übersetzt). Lehrer meinte die Jungendlichen aus Mythea hätte hier im Zentaurengebiet nichts verloren.",
+          "Alter Zentauren-Lehrer und junge Zentauren-Schülerin (hat für ihren Meister übersetzt). Lehrer meinte die Jugendlichen aus Mythea hätte hier im Zentaurengebiet nichts verloren.",
       },
       {
         x: -4,
@@ -133,7 +133,7 @@ export const mapData = [
         label: "The Wall",
         terrain: "city",
         notes:
-          "* Ruined (die alte Siedlung, verbrannt) - markiert die Südgrenze des Zentaurengebiets\n* Dense\n* Inaccessible\n\n- alter Palisadenzaun (vom Erstaußenposten)",
+          "* Ruined: die alte Siedlung, verbrannt - markiert die Südgrenze des Zentaurengebiets\n* Dense\n* Inaccessible\n\n- alter Palisadenzaun (vom Erstaußenposten)\n- Reste der Siedlung wurden als Grenzmarkierung benutzt - ein Holzpfahl / Dachbalken / Wandbrett aller ca. 10m?",
       },
       {
         x: 1,
@@ -158,7 +158,7 @@ export const mapData = [
     data: [
       { x: 2, y: -3, label: "", terrain: "", notes: "" },
       { x: 2, y: -2, label: "", terrain: "", notes: "" },
-      { x: 2, y: -1, label: "", terrain: "", notes: "" },
+      { x: 2, y: -1, label: "", terrain: "", notes: "Overlaytest." },
       { x: 2, y: 0, label: "", terrain: "", notes: "" },
       { x: 2, y: 1, label: "", terrain: "", notes: "" },
       { x: 2, y: 2, label: "", terrain: "", notes: "" },

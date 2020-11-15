@@ -220,3 +220,15 @@ figure.edit {
   width: 61.8%;
   height: 61.8%;
 }
+#notesOverlay {
+  position: absolute;
+  display: none;
+  width: 20vw;
+  background-color: rgba(0, 0, 0, 0.67);
+  z-index: 15;
+  padding: 1rem;
+  color: #f8f8f8;
+  text-shadow: 1px 1px 0 #000;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem #333;
+}

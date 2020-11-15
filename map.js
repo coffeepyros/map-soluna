@@ -17,6 +17,8 @@ function render() {
       // ignore the column ID for displaying the content of the column object
       let cell = document.createElement("figure");
       cell.classList.add("hex");
+      cell.setAttribute("data-x", cellData.x);
+      cell.setAttribute("data-y", cellData.y);
       if (cellData.terrain) cell.classList.add(cellData.terrain);
       cell.innerHTML =
         `<span class="coords">(${cellData.x},${cellData.y})</span>` +
@@ -237,18 +239,66 @@ formEditCell.addEventListener("submit", (e) => {
     terrain: formData.get("terrain"),
     notes: formData.get("notes"),
   };
-  let replaceColIndex;
-  for (let i = 0; i < mapData.length; i++) {
-    if (mapData[i].col_ID === newCellData.x) replaceColIndex = i;
-  }
-  let replaceCellIndex;
-  for (let j = 0; j < mapData[replaceColIndex].data.length; j++) {
-    if (mapData[replaceColIndex].data[j].y === newCellData.y)
-      replaceCellIndex = j;
-  }
-  console.log(replaceColIndex);
-  console.log(replaceCellIndex);
+  let replaceColIndex = getMapColIndexForX(newCellData.x);
+  let replaceCellIndex = getMapCellIndexForY(replaceColIndex, newCellData.y);
   mapData[replaceColIndex].data[replaceCellIndex] = newCellData;
   render();
   e.preventDefault();
+});
+
+function getMapColIndexForX(searchX) {
+  let index;
+  for (let i = 0; i < mapData.length; i++) {
+    if (mapData[i].col_ID === searchX) index = i;
+  }
+  return index;
+}
+function getMapCellIndexForY(indexX, searchY) {
+  let index;
+  for (let j = 0; j < mapData[indexX].data.length; j++) {
+    if (mapData[parseInt(indexX)].data[j].y === searchY) index = j;
+  }
+  return index;
+}
+function getColAndCellIndexForXY(x, y) {
+  let colIndex = getMapColIndexForX(parseInt(x));
+  let cellIndex = getMapCellIndexForY(colIndex, parseInt(y));
+  return { col: colIndex, cell: cellIndex };
+}
+
+// NOTES OVERLAY
+
+document.addEventListener("mousemove", (e) => {
+  const notesOverlay = document.getElementById("notesOverlay");
+  let overlayOffsetX = 16;
+  let overlayOffsetY = 16;
+  if (
+    e.target.classList.contains("hex") ||
+    e.target.classList.contains("coords") ||
+    e.target.tagName == "EM"
+  ) {
+    notesOverlay.style.display = "block";
+    notesOverlay.style.top = e.clientY + overlayOffsetY + "px";
+    notesOverlay.style.left = e.clientX + overlayOffsetX + "px";
+  } else {
+    notesOverlay.style.display = "none";
+  }
+  let x;
+  let y;
+  if (e.target.classList.contains("hex")) {
+    x = e.target.getAttribute("data-x");
+    y = e.target.getAttribute("data-y");
+  } else if (
+    e.target.classList.contains("coords") ||
+    e.target.tagName == "EM"
+  ) {
+    x = e.target.parentElement.getAttribute("data-x");
+    y = e.target.parentElement.getAttribute("data-y");
+  }
+  if (x && y) {
+    let coords = getColAndCellIndexForXY(x, y);
+    if (mapData[coords.col].data[coords.cell].notes)
+      notesOverlay.innerText = mapData[coords.col].data[coords.cell].notes;
+    else notesOverlay.style.display = "none";
+  }
 });
