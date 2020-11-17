@@ -249,3 +249,8 @@ figure.edit {
 #notesOverlay em {
   font-style: normal;
 }
+#admin {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

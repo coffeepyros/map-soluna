@@ -307,3 +307,10 @@ document.addEventListener("mousemove", (e) => {
     } else notesOverlay.style.display = "none";
   }
 });
+
+// PLAYER / GM VIEW
+document.getElementById("user").addEventListener("change", changeUser);
+function changeUser() {
+  const user = document.getElementById("user").value;
+  console.log(user);
+}
