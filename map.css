@@ -120,6 +120,11 @@ form#formEditCell h2 {
 }
 input#cellID {
   width: 120px;
+  background-color: #ccc;
+  cursor: default;
+}
+select {
+  cursor: pointer;
 }
 form#formEditCell textarea {
   height: 25vh;
