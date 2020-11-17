@@ -10,7 +10,6 @@ working prototype: https://coffeepyros.github.io/map-soluna/
 
 ## todo
 
-- editing the cells itself
 - if the map gets too big, the interface should still be visible and not being scrolled out
 - research zooming part of your website
 - permanently writing new map data to file / cloud (haven't learned this yet)
@@ -19,5 +18,7 @@ working prototype: https://coffeepyros.github.io/map-soluna/
 
 - rendering js object data as hex map
 - reading cells
+- editing the content of the cells
 - adding rows and columns
 - exporting/importing as JSON
+- overlay for cell notes if present
