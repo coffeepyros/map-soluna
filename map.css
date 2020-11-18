@@ -5,8 +5,10 @@
   --cell-height: calc((100vh - 6rem) / 8.5);
   /* 8.5 may need to be changed dynamically, based on map size */
   --cell-width: calc(var(--cell-height) * 1.1547); /* hex aspect ratio */
-  --cell-gap-x: 4px;
-  --cell-gap-y: 3px;
+  --cell-gap-y: 4px;
+  /* for smaller sizes (<4px) the ratio is wonky, because there
+  are no decimal point pixel... */
+  --cell-gap-x: calc(var(--cell-gap-y) * 1.1547);
 }
 * {
   border: 0;
