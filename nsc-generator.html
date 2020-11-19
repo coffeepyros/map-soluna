@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluna - NSC Generator</title>
+    <!-- <link rel="stylesheet" href="./reset.css" /> -->
+    <link rel="stylesheet" href="./nsc-generator.css" />
+  </head>
+  <body>
+    <main>
+      <h1>NSC Generator</h1>
+      <h2>Basics</h2>
+      <fieldset id="basics">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
+        <label for="bloodline">Bloodline</label>
+        <input type="text" name="bloodline" id="bloodline" />
+        <label for="class">Class</label>
+        <select name="class" id="class">
+          <option value="Barbarian">Barbarian</option>
+          <option value="Bard">Bard</option>
+          <option value="Cleric">Cleric</option>
+          <option value="Druid">Druid</option>
+          <option value="Fighter">Fighter</option>
+          <option value="Monk">Monk</option>
+          <option value="Paladin">Paladin</option>
+          <option value="Ranger">Ranger</option>
+          <option value="Rogue">Rogue</option>
+          <option value="Sorcerer">Sorcerer</option>
+          <option value="Warlock">Warlock</option>
+          <option value="Wizard">Wizard</option>
+          <option value="NSC" selected="selected">NSC</option>
+          <option value="Monster">Monster</option>
+        </select>
+        <label for="level">Level</label>
+        <input type="number" name="level" id="level" value="1" />
+        <label for="ac">Armor Class</label>
+        <input type="number" name="ac" id="ac" />
+        <label for="hp">Hit Points</label>
+        <input type="number" name="hp" id="hp" />
+        <label for="speed">Speed</label>
+        <input type="number" name="speed" id="speed" />
+      </fieldset>
+      <h2>Ability Scores</h2>
+      <fieldset id="ability_scores">
+        <label for="str">STR</label>
+        <select id="str">
+          <option value="15">15</option>
+          <option value="14">14</option>
+          <option value="13">13</option>
+          <option value="12">12</option>
+          <option value="10" selected="selected">10</option>
+          <option value="8">8</option>
+        </select>
+        <label for="dex">DEX</label>
+        <select id="dex">
+          <option value="15">15</option>
+          <option value="14">14</option>
+          <option value="13">13</option>
+          <option value="12">12</option>
+          <option value="10" selected="selected">10</option>
+          <option value="8">8</option>
+        </select>
+        <label for="con">CON</label>
+        <select id="con">
+          <option value="15">15</option>
+          <option value="14">14</option>
+          <option value="13">13</option>
+          <option value="12">12</option>
+          <option value="10" selected="selected">10</option>
+          <option value="8">8</option>
+        </select>
+        <label for="int">INT</label>
+        <select id="int">
+          <option value="15">15</option>
+          <option value="14">14</option>
+          <option value="13">13</option>
+          <option value="12">12</option>
+          <option value="10" selected="selected">10</option>
+          <option value="8">8</option>
+        </select>
+        <label for="wis">WIS</label>
+        <select id="wis">
+          <option value="15">15</option>
+          <option value="14">14</option>
+          <option value="13">13</option>
+          <option value="12">12</option>
+          <option value="10" selected="selected">10</option>
+          <option value="8">8</option>
+        </select>
+        <label for="cha">CHA</label>
+        <select id="cha">
+          <option value="15">15</option>
+          <option value="14">14</option>
+          <option value="13">13</option>
+          <option value="12">12</option>
+          <option value="10" selected="selected">10</option>
+          <option value="8">8</option>
+        </select>
+      </fieldset>
+    </main>
+    <aside>
+      <article id="statblock">
+        <h2>Name</h2>
+        <p>
+          Medium Humanoid (<span class="bloodline">Bloodline</span>),
+          <span class="class">NSC</span> Level <span class="level">1</span>
+        </p>
+        <hr />
+        <p>
+          <strong>Armor Class</strong> <span class="ac">10</span>
+          <strong>Hit Points</strong> <span class="hp">6</span>
+          <strong>Speed</strong> <span class="speed">30 ft.</span>
+        </p>
+        <hr />
+        <table>
+          <thead>
+            <tr>
+              <th>STR</th>
+              <th>DEX</th>
+              <th>CON</th>
+              <th>INT</th>
+              <th>WIS</th>
+              <th>CHA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="str">10 (+0)</td>
+              <td class="dex">10 (+0)</td>
+              <td class="con">10 (+0)</td>
+              <td class="int">10 (+0)</td>
+              <td class="wis">10 (+0)</td>
+              <td class="cha">10 (+0)</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+      </article>
+    </aside>
+    <script src="./nsc-generator.js"></script>
+  </body>
+</html>

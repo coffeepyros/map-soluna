@@ -7,17 +7,21 @@
     <link rel="stylesheet" href="./map.css" />
   </head>
   <body>
+    <!-- Overlay for Export / Import -->
     <div id="overlay" class="hidden">
       <a href="#">[ Close ]</a>
       <textarea></textarea>
     </div>
-    <section id="notesOverlay">Overlay</section>
+    <!-- Overlay for Notes, displayed on hover next to hex cell -->
+    <section id="notesOverlay"></section>
+    <!-- User selection in top right corner -->
     <section id="admin">
       <select id="user" name="user">
         <option>Player</option>
         <option>GM</option>
       </select>
     </section>
+    <!-- Main Headline, is placed absolutely, above (z-index) map -->
     <header>
       <h1>Map of Soluna</h1>
     </header>
@@ -33,6 +37,7 @@
         <h2>Map Options</h2>
         <button id="hideCoords">Hide Coordinates</button>
       </form>
+
       <form id="formMapData">
         <h2>Load / Save</h2>
         <button id="btnImport">Import Map</button>

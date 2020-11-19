@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@700&display=swap");
+* {
+  font-family: "Inknut Antiqua", serif;
+  box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+body {
+  margin: 0;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+h1,
+main h2 {
+  margin: 1em 0;
+}
+input,
+select {
+  border: 1px solid #aaa;
+  font-size: 1rem;
+}
+label {
+  font-weight: bold;
+  text-align: right;
+}
+input {
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+}
+#basics {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  gap: 1rem;
+}
+input#name,
+input#bloodline {
+  grid-column: 2 / 7;
+}
+input#class {
+  grid-column: 2 / 5;
+}
+#basics input[type="number"] {
+  width: 100%;
+}
+#ability_scores {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  gap: 1rem;
+}
+#ability_scores label:not(:first-of-type) {
+  margin-left: 1rem;
+}
+aside {
+  display: grid;
+}
+
+/* ---------- STAT BLOCK ---------- */
+#statblock {
+  justify-self: center;
+  align-self: center;
+  background-color: antiquewhite;
+  width: 50ch;
+  padding: 1rem;
+}
+#statblock h2 {
+  font-family: "Vollkorn SC", serif;
+  font-size: 2rem;
+  letter-spacing: -0.05em;
+}
+#statblock hr {
+  border-bottom: 0.25rem solid hsl(0, 100%, 33%);
+}
+#statblock p {
+  margin: 1rem 0;
+}
+p strong:not(:first-of-type) {
+  margin-left: 1rem;
+}
+#statblock table {
+  width: 100%;
+  margin: 1rem 0;
+}
+#statblock td {
+  text-align: center;
+  padding-top: 0.5rem;
+}
