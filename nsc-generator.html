@@ -100,11 +100,11 @@
         </select>
       </fieldset>
     </main>
-    <aside>
-      <article id="statblock">
-        <h2>Name</h2>
+    <aside id="statblock">
+      <article>
+        <h2 class="name">(Name)</h2>
         <p>
-          Medium Humanoid (<span class="bloodline">Bloodline</span>),
+          Medium <span class="bloodline">(Bloodline)</span>,
           <span class="class">NSC</span> Level <span class="level">1</span>
         </p>
         <hr />
@@ -137,8 +137,11 @@
           </tbody>
         </table>
         <hr />
+        <p id="saving_throws"></p>
+        <p id="class_levels"></p>
       </article>
     </aside>
-    <script src="./nsc-generator.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="./nsc-generator.js"></script>
   </body>
 </html>

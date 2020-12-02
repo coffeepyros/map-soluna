@@ -1,0 +1,23 @@
+{
+  "name": "map-soluna",
+  "version": "1.0.0",
+  "description": "Hex based map tool for my Dungeons & Dragons campaign setting \"Soluna\". In the end my players should be able to:",
+  "main": "map.js",
+  "dependencies": {
+    "axios": "^0.21.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coffeepyros/map-soluna.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coffeepyros/map-soluna/issues"
+  },
+  "homepage": "https://github.com/coffeepyros/map-soluna#readme"
+}
